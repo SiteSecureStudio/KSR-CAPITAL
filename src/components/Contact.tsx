@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useInView } from '../hooks/useInView'
 import { Reveal } from './ui/Reveal'
 import { SectionLabel } from './ui/SectionLabel'
@@ -60,7 +61,7 @@ export function Contact() {
             asChild
             className="bg-[#C9A227] text-[#080808] hover:bg-[#E8C964] rounded-none px-8 h-13 text-sm font-semibold tracking-wide transition-colors duration-300"
           >
-            <a href="mailto:info@ksrcapital.com.my" className="inline-flex items-center gap-3">
+            <a href="mailto:ksrcapitalsb@gmail.com" className="inline-flex items-center gap-3">
               <Mail className="h-4 w-4" />
               Email Us
             </a>
@@ -71,10 +72,20 @@ export function Contact() {
             variant="outline"
             className="border-[#242424] text-[#9A9085] bg-transparent hover:border-[#C9A227] hover:text-[#E2D9C8] rounded-none px-8 h-13 text-sm font-medium tracking-wide transition-colors duration-300"
           >
-            <a href="tel:+60111222000" className="inline-flex items-center gap-3">
+            <a href="tel:0361867032" className="inline-flex items-center gap-3">
               <Phone className="h-4 w-4" />
               Call Us
             </a>
+          </Button>
+
+          <Button
+            asChild
+            variant="outline"
+            className="border-[#C9A227]/30 text-[#C9A227] bg-transparent hover:bg-[#C9A227]/10 rounded-none px-8 h-13 text-sm font-medium tracking-wide transition-colors duration-300"
+          >
+            <Link to="/contact" className="inline-flex items-center gap-3">
+              Full Contact Details
+            </Link>
           </Button>
         </Reveal>
 
@@ -89,7 +100,7 @@ export function Contact() {
               <div className="hidden sm:block w-px h-4 bg-[#242424]" />
               <div className="flex items-center gap-2.5 text-[#9A9085] text-sm">
                 <Mail className="h-4 w-4 text-[#C9A227]" />
-                info@ksrcapital.com.my
+                ksrcapitalsb@gmail.com
               </div>
             </CardContent>
           </Card>

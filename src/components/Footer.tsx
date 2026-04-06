@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logo from '../../brand assests/KSR Capital logo design.png'
 import { Separator } from '@/components/ui/separator'
 import { MapPin, Phone, Mail, Printer } from 'lucide-react'
@@ -17,7 +18,9 @@ export function Footer() {
 
           {/* Logo + tagline */}
           <div className="flex-shrink-0">
-            <img src={logo} alt="KSR Capital Sdn Bhd" className="h-20 w-auto object-contain mb-4" />
+            <Link to="/">
+              <img src={logo} alt="KSR Capital Sdn Bhd" className="h-20 w-auto object-contain mb-4" />
+            </Link>
             <p className="text-[#9A9085] text-xs tracking-wide">
               Premier property investment<br />Kuala Lumpur, Malaysia.
             </p>
@@ -72,14 +75,20 @@ export function Footer() {
 
           {/* Nav links */}
           <nav className="flex flex-row md:flex-col gap-5 md:gap-4 flex-shrink-0 md:pt-1">
-            {['About', 'Portfolio', 'Contact'].map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+            {[
+              { href: '/about', label: 'About' },
+              { href: '/portfolio', label: 'Portfolio' },
+              { href: '/approach', label: 'Our Approach' },
+              { href: '/contact', label: 'Contact' },
+              { href: '/privacy', label: 'Privacy Policy' },
+            ].map(({ href, label }) => (
+              <Link
+                key={label}
+                to={href}
                 className="text-[#9A9085] hover:text-[#C9A227] text-sm tracking-wide transition-colors duration-200"
               >
-                {link}
-              </a>
+                {label}
+              </Link>
             ))}
           </nav>
         </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
@@ -96,10 +97,10 @@ export function Hero() {
             asChild
             className="bg-[#C9A227] text-[#080808] hover:bg-[#E8C964] rounded-none px-7 py-3.5 h-auto text-sm font-semibold tracking-wide transition-colors duration-300"
           >
-            <a href="#portfolio" className="inline-flex items-center gap-2.5">
+            <Link to="/portfolio" className="inline-flex items-center gap-2.5">
               Explore Portfolio
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </Button>
 
           <Button
@@ -107,7 +108,7 @@ export function Hero() {
             variant="outline"
             className="border-[#242424] text-[#9A9085] bg-transparent hover:border-[#C9A227] hover:text-[#E2D9C8] rounded-none px-7 py-3.5 h-auto text-sm font-medium tracking-wide transition-colors duration-300"
           >
-            <a href="#about">Our Story</a>
+            <Link to="/about">Our Story</Link>
           </Button>
         </FadeIn>
       </div>
