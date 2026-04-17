@@ -163,7 +163,7 @@ export function ContactPage() {
               >
                 <iframe
                   title="KSR Capital Office Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.259953060065!2d101.68280987496556!3d3.2345919967901766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc49e8c0c81bbd%3A0x6e8b9c24a1b48b5!2sBatu%20Caves%2C%20Selangor!5e0!3m2!1sen!2smy!4v1712000000000!5m2!1sen!2smy"
+                  src="https://maps.google.com/maps?q=3.23782882520018,101.70423591349342&z=16&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}

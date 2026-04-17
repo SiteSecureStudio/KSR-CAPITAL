@@ -7,6 +7,7 @@ import imgKB4 from '../../brand assests/Portfolio pictures/Double Storey Terrace
 // ── Rinching images ──
 import imgRC1 from '../../brand assests/Portfolio pictures/Industrial Shoplot Rinching/45a640ed-0beb-4d1c-bcf0-674bbd8cd1ab.JPG'
 import imgRC2 from '../../brand assests/Portfolio pictures/Industrial Shoplot Rinching/f097ef78-ee4a-4297-8fb3-612b17224849.JPG'
+import imgRC3 from '../../brand assests/Portfolio pictures/Industrial Shoplot Rinching/WhatsApp Image 2026-04-06 at 11.42.25.jpeg'
 
 // ── Sungai Besi images ──
 import imgSB1 from '../../brand assests/Portfolio pictures/Industrial Shoplot Sungai Besi/IMG_5248.JPG'
@@ -63,7 +64,7 @@ export const properties: PropertyData[] = [
     area: 'Selangor',
     type: 'Industrial',
     tag: 'Industrial Unit',
-    images: [imgRC1, imgRC2],
+    images: [imgRC1, imgRC2, imgRC3],
     story:
       'Located in the vibrant area of Rinching, this single-story industrial shoplot development comprises 32 versatile units, thoughtfully designed to cater to a wide range of business needs. The project emphasizes functionality and practicality, offering ample space for businesses to operate efficiently while fostering a conducive environment for growth. Its strategic location ensures easy accessibility and connectivity to major transportation routes, making it an ideal hub for enterprises seeking convenience and visibility.',
     highlights: [
