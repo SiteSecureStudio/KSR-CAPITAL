@@ -14,11 +14,11 @@ const pillars = [
   },
   {
     word: 'Develop.',
-    desc: 'We are not passive landlords. Once acquired, our properties are actively managed to maximise their potential — through tenant selection, maintenance excellence, and incremental improvements that preserve and enhance asset value over time.',
+    desc: 'We develop industrial and commercial land from the ground up — structuring each project to maximise yield, occupancy, and long-term value. From site planning and contractor coordination through to strata titling and CLQ establishment, we manage the full development process with discipline and precision.',
   },
   {
-    word: 'Deliver.',
-    desc: 'Returns matter. We structure our portfolio to generate consistent income through high occupancy rates and quality tenants, while positioning each asset for long-term capital appreciation. Delivering results is not just about returns — it is about delivering quality spaces that tenants want to stay in.',
+    word: 'Management.',
+    desc: 'Active, hands-on management is our edge. We administer strata properties in full compliance with the Strata Management Act, set up and run CLQ (Communal Land Quit Rent) arrangements for shared-title assets, and operate lifestyle venues — including pickleball courts and a wedding hall — to the same performance standard we apply to every asset in our portfolio.',
   },
 ]
 
@@ -43,19 +43,29 @@ const criteria = [
 
 const assetClasses = [
   {
-    type: 'Commercial',
-    role: 'Foundation',
-    desc: 'Commercial shoplots provide our income bedrock — high occupancy, diverse tenant bases, and strong location appeal. Our Kampung Baru development exemplifies this: well-designed units in a high-traffic area that attract quality tenants across retail and service industries.',
-  },
-  {
-    type: 'Industrial',
+    type: 'Industrial Land',
     role: 'Growth Engine',
-    desc: 'Industrial real estate is Malaysia\'s fastest-growing segment, driven by logistics expansion, e-commerce growth, and manufacturing relocation. Our Rinching and Sungai Besi developments capture this structural demand with units designed for operational flexibility.',
+    desc: 'Industrial real estate is Malaysia\'s fastest-growing segment, driven by logistics expansion, e-commerce growth, and manufacturing relocation. We develop industrial land from the ground up — delivering flexible units in strategic logistics corridors that attract long-term occupiers.',
   },
   {
-    type: 'Lifestyle',
-    role: 'Diversifier',
-    desc: 'Lifestyle assets like our Kampung Pandan pickleball facility represent KSR\'s forward-looking thesis: as Malaysian urban communities mature, demand for premium recreational infrastructure grows. These assets diversify income and build community goodwill.',
+    type: 'Commercial Land',
+    role: 'Income Bedrock',
+    desc: 'Commercial land development anchors our portfolio with high-footfall, high-occupancy assets. We design and deliver commercial units in established and emerging townships, with strata titling and professional management built into every project from day one.',
+  },
+  {
+    type: 'Strata & CLQ Management',
+    role: 'Operational Core',
+    desc: 'We manage strata-titled properties in full compliance with the Strata Management Act — handling JMB/MC setup, maintenance funds, service charge collection, and owner relations. We also administer CLQ (Communal Land Quit Rent) arrangements, structuring shared-title assets for clarity, compliance, and equitable cost allocation.',
+  },
+  {
+    type: 'Pickleball Courts',
+    role: 'Lifestyle Asset',
+    desc: 'Pickleball is Malaysia\'s fastest-growing recreational sport, and we are ahead of the curve. Our Kampung Pandan facility is purpose-built for performance and community — delivering reliable rental income while meeting genuine demand in the urban lifestyle market.',
+  },
+  {
+    type: 'Wedding Hall',
+    role: 'Event Venue',
+    desc: 'Our premium wedding hall and event venue brings lifestyle income to our portfolio through a high-demand, relationship-driven market. Professionally managed with a focus on guest experience, the venue builds community goodwill and generates consistent bookings year-round.',
   },
 ]
 
@@ -106,7 +116,7 @@ export function ApproachPage() {
 
       <Separator className="bg-[#242424]" />
 
-      {/* ── Invest. Develop. Deliver. ── */}
+      {/* ── Invest. Develop. Manage. ── */}
       <section className="py-24 md:py-32">
         <div className="max-w-6xl mx-auto px-8 md:px-12">
           <div ref={pillarsRef}>
@@ -203,21 +213,21 @@ export function ApproachPage() {
                 className="font-display text-[#E2D9C8] mt-4 leading-tight"
                 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 400, letterSpacing: '-0.01em' }}
               >
-                Three classes.<br />
+                Five verticals.<br />
                 <em className="text-[#C9A227] italic">One resilient portfolio.</em>
               </h2>
               <p className="text-[#9A9085] text-sm leading-relaxed mt-6 max-w-xl">
-                Our cross-class diversification is deliberate. Commercial, industrial, and lifestyle
-                assets respond differently to market cycles — together, they create a portfolio
-                that performs across conditions.
+                Our five verticals span the full property value chain — from land development and strata
+                management to CLQ administration and lifestyle venue operations. Together, they create
+                a portfolio that generates income across multiple market conditions.
               </p>
             </Reveal>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#242424] border border-[#242424]">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 divide-y divide-[#242424] border border-[#242424]">
             {assetClasses.map((ac, i) => (
-              <Reveal key={ac.type} inView={classesInView} delay={(i + 1) as 1 | 2 | 3}>
-                <div className="p-8 md:p-10">
+              <Reveal key={ac.type} inView={classesInView} delay={((i % 3) + 1) as 1 | 2 | 3}>
+                <div className="p-8 md:p-10 border-r border-[#242424] last:border-r-0">
                   <span className="text-[#9A9085] text-xs tracking-widest uppercase">{ac.role}</span>
                   <div
                     className="font-display text-[#C9A227] mt-2 mb-4"

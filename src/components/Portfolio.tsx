@@ -27,8 +27,6 @@ function PropertyCard({ property, index, inView }: PropertyCardProps) {
         <img
           src={property.images[0]}
           alt={property.name}
-          className="transition-transform duration-700 group-hover:scale-105"
-          style={{ transition: 'transform 700ms cubic-bezier(0.4,0,0.2,1)' }}
         />
         <div className="card-overlay" />
 

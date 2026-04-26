@@ -61,10 +61,10 @@ export function Contact() {
             asChild
             className="bg-[#C9A227] text-[#080808] hover:bg-[#E8C964] rounded-none px-8 h-13 text-sm font-semibold tracking-wide transition-colors duration-300"
           >
-            <a href="mailto:ksrcapitalsb@gmail.com" className="inline-flex items-center gap-3">
+            <Link to="/contact" className="inline-flex items-center gap-3">
               <Mail className="h-4 w-4" />
               Email Us
-            </a>
+            </Link>
           </Button>
 
           <Button

@@ -23,7 +23,7 @@ const values: Value[] = [
   },
   {
     title: 'Diversity',
-    desc: 'Our portfolio deliberately spans three distinct asset classes: commercial retail, industrial operations, and lifestyle facilities. This cross-class diversification provides resilience — when one sector faces headwinds, others provide stability.',
+    desc: 'Our expertise spans five verticals: industrial land development, commercial land development, strata property management, CLQ setup and administration, and lifestyle venues. This breadth provides resilience and multiple income streams across market cycles.',
   },
   {
     title: 'Integrity',
@@ -32,7 +32,7 @@ const values: Value[] = [
 ]
 
 const milestones = [
-  { year: '2019', event: 'Company established', detail: 'KSR Capital Sdn Bhd (764906-W) incorporated in Malaysia, beginning with a focused mandate in commercial real estate across the Klang Valley.' },
+  { year: '2007', event: 'Company incorporated', detail: 'KSR Capital Sdn Bhd (764906-W) incorporated in Malaysia on 8 March 2007, establishing our foundation in property investment across the Klang Valley.' },
   { year: '2020', event: 'First commercial acquisition', detail: 'Secured our first shoplot development in Kampung Baru, Kuala Lumpur — a 10-unit double-storey terrace that established our commercial asset foundation.' },
   { year: '2021', event: 'Industrial expansion', detail: 'Entered the industrial segment with the 32-unit Rinching development in Selangor, diversifying the portfolio across two asset classes and two markets.' },
   { year: '2022', event: 'KL industrial landmark', detail: 'Completed the Sungai Besi industrial complex — a 5-storey, 6-unit development that marked our move into premium vertical industrial space.' },
@@ -90,11 +90,7 @@ export function AboutPage() {
             </Reveal>
             <Reveal inView={heroInView} delay={2} className="mt-8 max-w-2xl">
               <p className="text-[#9A9085] leading-loose text-base md:text-lg font-light">
-                KSR Capital Sdn Bhd is a privately held property investment firm focused on commercial
-                and industrial real estate across key growth zones in Malaysia. Established in 2019 and
-                registered under SSM (764906-W), we take a disciplined, long-term approach to asset
-                selection — seeking properties that generate durable income and appreciate meaningfully
-                over time.
+                KSR Capital Sdn Bhd is a privately held property firm specialising in industrial and commercial land development, strata property management, and CLQ setup across key growth zones in Malaysia. Incorporated on 8 March 2007 and registered under SSM (764906-W), we combine disciplined asset selection with hands-on operational expertise across five distinct verticals.
               </p>
             </Reveal>
           </div>
@@ -121,19 +117,19 @@ export function AboutPage() {
                   <div className="flex items-start gap-4">
                     <div className="w-8 h-px bg-[#C9A227] mt-3 shrink-0" />
                     <p className="text-[#9A9085] text-sm leading-relaxed">
-                      Established with a vision to create lasting value through strategic property investment across Malaysia's most active economic corridors.
+                      Built on a foundation of industrial and commercial land development — identifying growth corridors early and delivering well-structured assets that perform over the long term.
                     </p>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-8 h-px bg-[#C9A227] mt-3 shrink-0" />
                     <p className="text-[#9A9085] text-sm leading-relaxed">
-                      From commercial shoplots to industrial units and recreational facilities — we identify, acquire, and manage assets built to perform across market cycles.
+                      Beyond development, we manage strata properties end-to-end, administer CLQ structures, and operate lifestyle venues — including pickleball courts and a wedding hall — that serve the evolving needs of urban communities.
                     </p>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-8 h-px bg-[#C9A227] mt-3 shrink-0" />
                     <p className="text-[#9A9085] text-sm leading-relaxed">
-                      Our operations are centred in Kuala Lumpur and Selangor — Malaysia's twin economic engines — where demand for quality commercial and industrial space continues to grow.
+                      Centred in Kuala Lumpur and Selangor — Malaysia's twin economic engines — where demand for quality industrial space, managed strata assets, and lifestyle infrastructure continues to grow.
                     </p>
                   </div>
                 </div>
@@ -142,10 +138,7 @@ export function AboutPage() {
 
             <Reveal inView={heroInView} delay={3}>
               <p className="text-[#9A9085] leading-loose text-sm md:text-base font-light mb-6">
-                Our portfolio spans double-storey shoplots in established townships, industrial
-                facilities in strategic logistics corridors, and lifestyle assets that reflect
-                the evolving needs of modern communities. Each asset is selected for its ability
-                to generate consistent returns while building long-term capital appreciation.
+                Our portfolio spans industrial and commercial land developments, strata-titled properties under active management, CLQ-structured assets, pickleball courts, and a wedding hall. Each asset is selected and operated for its ability to generate consistent returns while building long-term capital appreciation.
               </p>
               <p className="text-[#9A9085] leading-loose text-sm md:text-base font-light mb-8">
                 We work closely with tenants to ensure our properties remain fully occupied and
@@ -158,7 +151,7 @@ export function AboutPage() {
                 <p className="font-display text-[#E2D9C8]" style={{ fontSize: '1.1rem' }}>
                   KSR Capital Sdn Bhd · 764906-W
                 </p>
-                <p className="text-[#9A9085] text-sm mt-1">Incorporated in Malaysia · SSM Registered</p>
+                <p className="text-[#9A9085] text-sm mt-1">Incorporated 8 March 2007 · SSM Registered</p>
               </div>
             </Reveal>
           </div>
@@ -217,7 +210,7 @@ export function AboutPage() {
                 className="font-display text-[#E2D9C8] mt-4 leading-tight"
                 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 400, letterSpacing: '-0.01em' }}
               >
-                Five years of<br />
+                19+ years of<br />
                 <em className="text-[#C9A227] italic">deliberate growth</em>
               </h2>
             </Reveal>
@@ -255,7 +248,7 @@ export function AboutPage() {
             <Reveal inView={teamInView} delay={2}>
               <p className="text-[#9A9085] leading-loose text-sm md:text-base font-light mb-6">
                 Our team brings deep, collective expertise in property acquisition, asset management,
-                leasing, and tenant relations across the Klang Valley. Over five years, we have
+                leasing, and tenant relations across the Klang Valley. Over 19 years, we have
                 cultivated strong relationships with contractors, legal advisors, and local authorities
                 that give us a meaningful edge in deal sourcing and execution.
               </p>

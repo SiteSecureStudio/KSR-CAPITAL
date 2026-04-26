@@ -17,10 +17,10 @@ const statBlocks: StatBlock[] = [
     desc: 'Spanning commercial, industrial, and lifestyle real estate',
   },
   {
-    number: '5',
+    number: '19',
     unit: '+',
     label: 'Years Active',
-    desc: 'Building expertise in Malaysian real estate investment',
+    desc: 'Incorporated 8 March 2007 — building expertise in Malaysian real estate',
   },
   {
     number: 'KL',
@@ -29,10 +29,10 @@ const statBlocks: StatBlock[] = [
     desc: "Headquartered in Kuala Lumpur — Malaysia's prime economic hub",
   },
   {
-    number: '2',
+    number: '5',
     unit: '',
-    label: 'Asset Classes',
-    desc: 'Commercial and industrial assets built for long-term performance',
+    label: 'Verticals',
+    desc: 'Industrial land, commercial land, strata management, CLQ, and lifestyle venues',
   },
 ]
 

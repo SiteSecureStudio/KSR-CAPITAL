@@ -156,7 +156,7 @@
     rgba(8, 8, 8, 0.4) 45%,
     rgba(8, 8, 8, 0.1) 100%
   );
-  transition: background 0.4s ease;
+  transition: background 0.4s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .portfolio-card:hover .card-overlay {
@@ -166,6 +166,7 @@
     rgba(8, 8, 8, 0.55) 55%,
     rgba(8, 8, 8, 0.18) 100%
   );
+  transform: scale(1.06);
 }
 
 .portfolio-card .card-tag {

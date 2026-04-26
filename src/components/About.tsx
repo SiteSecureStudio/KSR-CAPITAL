@@ -12,7 +12,7 @@ interface Value {
 const values: Value[] = [
   { title: 'Discipline', desc: 'Rigorous asset selection grounded in fundamentals.' },
   { title: 'Longevity',  desc: 'Investments built to generate value over decades.' },
-  { title: 'Diversity',  desc: 'Exposure across commercial, industrial, and lifestyle.' },
+  { title: 'Diversity',  desc: 'Five verticals: industrial land, commercial land, strata management, CLQ, and lifestyle venues.' },
   { title: 'Integrity',  desc: 'Transparent dealings with tenants, partners, and stakeholders.' },
 ]
 
@@ -53,8 +53,8 @@ export function About() {
               KSR
             </div>
             <div className="mt-6 space-y-6">
-              <Bullet text="Established with a vision to create lasting value through strategic property investment across Malaysia's most active corridors." />
-              <Bullet text="From commercial shoplots to industrial units and recreational facilities — we identify, acquire, and manage assets built to perform." />
+              <Bullet text="Established with a vision to create lasting value through the development of industrial and commercial land across Malaysia's most active growth corridors." />
+              <Bullet text="From strata property management and CLQ setup to pickleball courts and wedding hall operations — our expertise spans every stage of the asset lifecycle." />
             </div>
           </Reveal>
 
@@ -72,15 +72,10 @@ export function About() {
             <Separator className="my-8 bg-[#C9A227]/40 w-12 h-px" />
 
             <p className="text-[#9A9085] leading-loose text-sm md:text-base font-light mb-6">
-              KSR Capital Sdn Bhd is a privately held property investment firm focused on commercial
-              and industrial real estate across key growth zones in Malaysia. We take a disciplined,
-              long-term approach to asset selection — seeking properties that generate durable income
-              and appreciate meaningfully over time.
+              KSR Capital Sdn Bhd is a privately held property firm with deep expertise in industrial and commercial land development, strata property management, and CLQ setup across key growth zones in Malaysia. We take a disciplined, long-term approach — acquiring assets that generate durable income and appreciate meaningfully over time.
             </p>
             <p className="text-[#9A9085] leading-loose text-sm md:text-base font-light mb-10">
-              Our portfolio spans double-storey shoplots in established townships, industrial
-              facilities in strategic logistics corridors, and lifestyle assets that reflect
-              the evolving needs of modern communities.
+              Our portfolio spans industrial and commercial land developments, strata-titled properties under active management, CLQ-structured assets, and lifestyle venues including pickleball courts and a wedding hall — reflecting the full breadth of modern property needs.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

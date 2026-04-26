@@ -5,7 +5,7 @@ import { Reveal } from '../components/ui/Reveal'
 import { SectionLabel } from '../components/ui/SectionLabel'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
-import { MapPin, ArrowRight } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import { properties, type PropertyData } from '../data/properties'
 
 type FilterType = 'All' | 'Commercial' | 'Industrial' | 'Lifestyle'
@@ -28,94 +28,83 @@ function PropertyCard({ property, inView }: PropertyCardProps) {
   }
 
   return (
-    <Reveal inView={inView} delay={1} className="relative" >
+    <Reveal inView={inView} delay={1} className="relative">
       <div style={{ position: 'relative', zIndex: hovered ? 10 : 1 }}>
-      <Link
-        to={`/portfolio/${property.slug}`}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className="block overflow-hidden"
-        style={{
-          background: '#0F0F0F',
-          border: `1px solid ${hovered ? 'rgba(201,162,39,0.4)' : 'rgba(36,36,36,1)'}`,
-          transition: 'border-color 300ms ease',
-        }}
-      >
-        <div className="relative overflow-hidden" style={{ height: '280px' }}>
-          {/* Image scales independently */}
-          <img
-            src={property.images[0]}
-            alt={property.name}
-            className="absolute inset-0 w-full h-full object-cover"
-            style={imgScale}
-          />
-          {/* Gradient — fades out on hover so the full image is revealed */}
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: 'linear-gradient(to top, rgba(8,8,8,0.75) 0%, transparent 60%)',
-              opacity: hovered ? 0 : 1,
-              transition: 'opacity 400ms ease',
-            }}
-          />
-
-          <div className="absolute top-5 left-5">
-            <Badge
-              variant="outline"
-              className="rounded-none border-[#C9A227]/40 bg-[#080808]/80 text-[#C9A227] text-xs font-semibold tracking-widest uppercase backdrop-blur-sm"
-            >
-              {property.type}
-            </Badge>
-          </div>
-          <div
-            className="absolute top-5 right-5"
-            style={{ opacity: hovered ? 1 : 0, transition: 'opacity 200ms ease' }}
-          >
-            <span
-              className="text-[#C9A227] text-xs tracking-widest uppercase"
-              style={{
-                background: 'rgba(8,8,8,0.7)',
-                backdropFilter: 'blur(6px)',
-                border: '1px solid rgba(201,162,39,0.25)',
-                padding: '4px 10px',
-              }}
-            >
-              View Project
-            </span>
-          </div>
-        </div>
-
-        <div className="p-7">
-          <span className="text-xs text-[#9A9085] tracking-widest uppercase">{property.tag}</span>
-          <h3
-            className="font-display text-[#E2D9C8] mt-2 mb-1 leading-tight"
-            style={{ fontSize: '1.4rem', fontWeight: 400 }}
-          >
-            {property.name}
-          </h3>
-          <div className="flex items-center gap-2 mb-4">
-            <MapPin className="w-3.5 h-3.5 text-[#C9A227]" />
-            <span className="text-[#9A9085] text-sm">{property.location}</span>
-          </div>
-          <p className="text-[#9A9085] text-sm leading-relaxed mb-6 line-clamp-2">
-            {property.story}
-          </p>
-          <div className="flex items-center justify-between pt-4 border-t border-[#242424]">
-            <div className="grid grid-cols-2 gap-x-8 gap-y-1">
-              {property.specs.slice(0, 2).map(spec => (
-                <div key={spec.label}>
-                  <span className="text-[#9A9085] text-xs">{spec.label}: </span>
-                  <span className="text-[#E2D9C8] text-xs font-medium">{spec.value}</span>
-                </div>
-              ))}
-            </div>
-            <ArrowRight
-              className="h-4 w-4 text-[#C9A227]"
-              style={{ opacity: hovered ? 1 : 0, transition: 'opacity 200ms ease' }}
+        <Link
+          to={`/portfolio/${property.slug}`}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          className="block overflow-hidden"
+          style={{
+            border: `1px solid ${hovered ? 'rgba(201,162,39,0.4)' : 'rgba(36,36,36,1)'}`,
+            transition: 'border-color 300ms ease',
+          }}
+        >
+          {/* Single image container — all content overlays inside */}
+          <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+            <img
+              src={property.images[0]}
+              alt={property.name}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={imgScale}
             />
+
+            {/* Gradient overlay — scales with the image on hover */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: 'linear-gradient(to top, rgba(6,6,6,0.92) 0%, rgba(6,6,6,0.45) 45%, transparent 75%)',
+                transform: hovered ? 'scale(1.05)' : 'scale(1)',
+                transition: 'transform 700ms cubic-bezier(0.4,0,0.2,1)',
+              }}
+            />
+
+            {/* Top-left: category badge */}
+            <div className="absolute top-5 left-5">
+              <Badge
+                variant="outline"
+                className="rounded-none border-[#C9A227]/40 bg-[#080808]/80 text-[#C9A227] text-xs font-semibold tracking-widest uppercase backdrop-blur-sm"
+              >
+                {property.type}
+              </Badge>
+            </div>
+
+            {/* Top-right: view project (hover reveal) */}
+            <div
+              className="absolute top-5 right-5"
+              style={{ opacity: hovered ? 1 : 0, transition: 'opacity 200ms ease' }}
+            >
+              <span
+                className="text-[#C9A227] text-xs tracking-widest uppercase"
+                style={{
+                  background: 'rgba(8,8,8,0.7)',
+                  backdropFilter: 'blur(6px)',
+                  border: '1px solid rgba(201,162,39,0.25)',
+                  padding: '4px 10px',
+                }}
+              >
+                View Project
+              </span>
+            </div>
+
+            {/* Bottom overlay: tag, name, location — pinned to image bottom */}
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <span className="block text-xs text-[#C9A227]/80 tracking-widest uppercase mb-2">
+                {property.tag}
+              </span>
+              <h3
+                className="font-display text-[#E2D9C8] leading-tight mb-3"
+                style={{ fontSize: '1.35rem', fontWeight: 400 }}
+              >
+                {property.name}
+              </h3>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#C9A227] flex-shrink-0" />
+                <span className="text-[#B8AFA3] text-sm">{property.location}</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </Link>
+        </Link>
       </div>
     </Reveal>
   )
@@ -153,8 +142,7 @@ export function PortfolioPage() {
               </Reveal>
               <Reveal inView={inView} delay={2} className="max-w-sm">
                 <p className="text-[#9A9085] text-sm leading-relaxed">
-                  A focused portfolio of income-generating assets across Kuala Lumpur and Selangor —
-                  selected for durability, location strength, and long-term appreciation.
+                  Industrial land, commercial developments, strata-managed properties, CLQ-structured assets, pickleball courts, and a wedding hall — across Kuala Lumpur and Selangor.
                 </p>
               </Reveal>
             </div>

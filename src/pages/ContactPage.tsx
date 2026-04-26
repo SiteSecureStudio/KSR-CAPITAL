@@ -157,7 +157,7 @@ export function ContactPage() {
               <div className="mt-12 pt-8 border-t border-[#242424]">
                 <p className="text-[#9A9085] text-xs tracking-widest uppercase mb-2">Company Registration</p>
                 <p className="text-[#E2D9C8] text-sm">KSR Capital Sdn Bhd · SSM No. 764906-W</p>
-                <p className="text-[#9A9085] text-xs mt-1">Incorporated in Malaysia</p>
+                <p className="text-[#9A9085] text-xs mt-1">Incorporated 8 March 2007 · Malaysia</p>
               </div>
             </Reveal>
 

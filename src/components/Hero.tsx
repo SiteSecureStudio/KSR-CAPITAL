@@ -12,9 +12,9 @@ interface StatItem {
 
 const stats: StatItem[] = [
   { value: '6',  label: 'Properties' },
-  { value: '5+', label: 'Years Active' },
+  { value: '19+', label: 'Years Active' },
   { value: 'KL', label: 'Based' },
-  { value: '2',  label: 'Asset Classes' },
+  { value: '5',  label: 'Verticals' },
 ]
 
 function FadeIn({ children, loaded, delay = '0s', className = '' }: {
@@ -81,14 +81,13 @@ export function Hero() {
           >
             Invest.<br />
             <em style={{ fontStyle: 'italic', color: '#C9A227' }}>Develop.</em><br />
-            Deliver.
+            Management.
           </h1>
         </FadeIn>
 
         <FadeIn loaded={loaded} delay="0.3s" className="mt-10 max-w-xl">
           <p className="text-cream-dim leading-relaxed text-base md:text-lg font-light">
-            A premier property investment firm building long-term value through
-            commercial, industrial, and lifestyle assets across Malaysia.
+            A premier property firm specialising in industrial and commercial land development, strata property management, CLQ setup, pickleball courts, and wedding hall operations across Malaysia.
           </p>
         </FadeIn>
 

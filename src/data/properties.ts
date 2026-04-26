@@ -169,8 +169,8 @@ export const properties: PropertyData[] = [
   {
     slug: 'pker-park-pickleball',
     name: 'Pickleball Court',
-    location: 'Pker Park',
-    area: 'Malaysia',
+    location: 'Pker Park, Selangor',
+    area: 'Selangor',
     type: 'Lifestyle',
     tag: 'Recreational Facility',
     images: [imgPker1, imgPker2, imgPker3],
