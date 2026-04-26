@@ -29,7 +29,17 @@ const aboutSubLinks = [
 function AboutDropdown({ pathname }: { pathname: string }) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isAboutActive = pathname.startsWith('/about')
+
+  const handleMouseEnter = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    setOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    closeTimer.current = setTimeout(() => setOpen(false), 200)
+  }
 
   // Close on outside click
   useEffect(() => {
@@ -46,8 +56,8 @@ function AboutDropdown({ pathname }: { pathname: string }) {
     <div
       ref={ref}
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <button
         onClick={() => setOpen(v => !v)}
