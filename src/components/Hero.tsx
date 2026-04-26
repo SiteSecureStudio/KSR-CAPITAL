@@ -63,9 +63,9 @@ export function Hero() {
         <FadeIn loaded={loaded} className="mb-10">
           <Badge
             variant="outline"
-            className="border-[#C9A227]/40 text-[#C9A227] bg-[#C9A227]/5 rounded-none text-[0.65rem] tracking-[0.2em] uppercase font-semibold px-3 py-1"
+            className="border-[#C9A227]/40 text-[#C9A227] bg-[#C9A227]/5 rounded-none text-[0.6rem] tracking-[0.15em] uppercase font-semibold px-3 py-1 whitespace-nowrap"
           >
-            KSR Capital Sdn Bhd — Kuala Lumpur, Malaysia
+            KSR Capital — Kuala Lumpur
           </Badge>
         </FadeIn>
 

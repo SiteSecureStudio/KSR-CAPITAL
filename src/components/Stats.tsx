@@ -44,7 +44,7 @@ interface StatItemProps {
 
 function StatItem({ stat, inView, delay }: StatItemProps) {
   return (
-    <Reveal inView={inView} delay={delay} className="px-0 md:px-10 py-10 md:py-0 first:pl-0 last:pr-0">
+    <Reveal inView={inView} delay={delay} className="px-0 md:px-8 py-8 md:py-0 first:pl-0 last:pr-0">
       <div className="flex items-end gap-1 mb-4">
         <span
           className="font-display text-gold leading-none"
