@@ -11,7 +11,7 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { value: '4',  label: 'Properties' },
+  { value: '6',  label: 'Properties' },
   { value: '5+', label: 'Years Active' },
   { value: 'KL', label: 'Based' },
   { value: '2',  label: 'Asset Classes' },

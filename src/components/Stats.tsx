@@ -11,7 +11,7 @@ interface StatBlock {
 
 const statBlocks: StatBlock[] = [
   {
-    number: '4',
+    number: '6',
     unit: '',
     label: 'Properties',
     desc: 'Spanning commercial, industrial, and lifestyle real estate',
