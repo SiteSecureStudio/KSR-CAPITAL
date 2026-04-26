@@ -39,7 +39,7 @@ const statBlocks: StatBlock[] = [
 interface StatItemProps {
   stat: StatBlock
   inView: boolean
-  delay: number
+  delay: 1 | 2 | 3 | 4
 }
 
 function StatItem({ stat, inView, delay }: StatItemProps) {
@@ -82,7 +82,7 @@ export function Stats() {
               key={stat.label}
               stat={stat}
               inView={inView}
-              delay={(i + 1) as 1 | 2 | 3}
+              delay={(i + 1) as 1 | 2 | 3 | 4}
             />
           ))}
         </div>
