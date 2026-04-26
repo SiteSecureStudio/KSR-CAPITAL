@@ -1,3 +1,4 @@
+import directorImg from '../../brand assests/Director Image.jpeg'
 import { useInView } from '../hooks/useInView'
 import { Reveal } from '../components/ui/Reveal'
 import { SectionLabel } from '../components/ui/SectionLabel'
@@ -71,11 +72,33 @@ export function DirectorPage() {
             {/* Left — visual identity block */}
             <Reveal inView={heroInView} delay={1}>
               <div className="relative">
+                {/* Director photo */}
+                <div
+                  className="relative mb-6 overflow-hidden"
+                  style={{ aspectRatio: '3/4' }}
+                >
+                  <img
+                    src={directorImg}
+                    alt="Mr. Sivabalan — Director, KSR Capital"
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: 'center 20%', filter: 'brightness(0.88) contrast(1.05)' }}
+                  />
+                  {/* Gold-tinted gradient overlay */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background: 'linear-gradient(to bottom, transparent 50%, rgba(10,8,5,0.7) 100%)',
+                    }}
+                  />
+                </div>
+
                 {/* Name plate */}
                 <div
-                  className="border border-[#C9A227]/20 bg-[#0F0F0F]/60 p-8 backdrop-blur-sm"
+                  className="relative border border-[#C9A227]/20 bg-[#0F0F0F]/60 p-8 backdrop-blur-sm"
                   style={{ boxShadow: '0 0 60px rgba(201,162,39,0.04)' }}
                 >
+                  {/* Gold accent bar — full height of name plate */}
+                  <div className="absolute -left-px top-0 bottom-0 w-px bg-[#C9A227]" style={{ opacity: 0.6 }} />
                   <div className="mb-6">
                     <GoldDivider />
                   </div>
@@ -110,11 +133,6 @@ export function DirectorPage() {
                   </div>
                 </div>
 
-                {/* Gold accent bar */}
-                <div
-                  className="absolute -left-px top-8 bottom-8 w-px bg-[#C9A227]"
-                  style={{ opacity: 0.6 }}
-                />
               </div>
             </Reveal>
 

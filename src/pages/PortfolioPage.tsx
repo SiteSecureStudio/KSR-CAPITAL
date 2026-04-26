@@ -42,32 +42,22 @@ function PropertyCard({ property, inView }: PropertyCardProps) {
         }}
       >
         <div className="relative overflow-hidden" style={{ height: '280px' }}>
-          {/* Image + both overlays share the same transform so they scale as one */}
-          <div className="absolute inset-0" style={imgScale}>
-            <img
-              src={property.images[0]}
-              alt={property.name}
-              className="w-full h-full object-cover"
-            />
-            {/* Base overlay — fades out on hover */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background: 'linear-gradient(to top, rgba(8,8,8,0.65) 0%, transparent 55%)',
-                opacity: hovered ? 0 : 1,
-                transition: 'opacity 500ms ease',
-              }}
-            />
-            {/* Hover overlay — fades in on hover, covers more of image */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background: 'linear-gradient(to top, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.5) 50%, rgba(8,8,8,0.15) 100%)',
-                opacity: hovered ? 1 : 0,
-                transition: 'opacity 500ms ease',
-              }}
-            />
-          </div>
+          {/* Image scales independently */}
+          <img
+            src={property.images[0]}
+            alt={property.name}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={imgScale}
+          />
+          {/* Gradient — fades out on hover so the full image is revealed */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to top, rgba(8,8,8,0.75) 0%, transparent 60%)',
+              opacity: hovered ? 0 : 1,
+              transition: 'opacity 400ms ease',
+            }}
+          />
 
           <div className="absolute top-5 left-5">
             <Badge

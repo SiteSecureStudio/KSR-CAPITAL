@@ -12,10 +12,20 @@ import imgRC3 from '../../brand assests/Portfolio pictures/Industrial Shoplot Ri
 // ── Sungai Besi images ──
 import imgSB1 from '../../brand assests/Portfolio pictures/Industrial Shoplot Sungai Besi/IMG_5248.JPG'
 
-// ── Pickleball images ──
+// ── Pickleball Kampung Pandan images ──
 import imgPB1 from '../../brand assests/Portfolio pictures/Pickleball Court Kampung Pandan/dele 43.jpg'
 import imgPB2 from '../../brand assests/Portfolio pictures/Pickleball Court Kampung Pandan/dele 44.jpg'
 import imgPB3 from '../../brand assests/Portfolio pictures/Pickleball Court Kampung Pandan/dele 45.jpg'
+
+// ── Dome Style Hall images ──
+import imgDome1 from '../../brand assests/Portfolio pictures/Dome Style Hall (Ongoing)/dome-tent-true-eyecatcher.jpeg'
+import imgDome2 from '../../brand assests/Portfolio pictures/Dome Style Hall (Ongoing)/228.jpg'
+import imgDome3 from '../../brand assests/Portfolio pictures/Dome Style Hall (Ongoing)/1259-202007080954021962.jpg'
+
+// ── Pker Park Pickleball Court images ──
+import imgPker1 from '../../brand assests/Portfolio pictures/Pker Park Pickleball Court/SaveClip.App_620962443_17878790574376655_1029738150051296785_n.jpg'
+import imgPker2 from '../../brand assests/Portfolio pictures/Pker Park Pickleball Court/WhatsApp Image 2026-04-24 at 00.33.41.jpeg'
+import imgPker3 from '../../brand assests/Portfolio pictures/Pker Park Pickleball Court/WhatsApp Image 2026-04-24 at 00.33.43.jpeg'
 
 export interface PropertyData {
   slug: string
@@ -130,5 +140,55 @@ export const properties: PropertyData[] = [
     ],
     areaContext:
       'Kampung Pandan is a densely populated residential district in central Kuala Lumpur with a strong community identity. Rising demand for premium recreational facilities in urban KL — driven by a growing wellness culture — makes this lifestyle asset well-positioned to serve an active, community-focused demographic.',
+  },
+  {
+    slug: 'dome-style-hall',
+    name: 'Dome Style Hall',
+    location: 'Malaysia',
+    area: 'Malaysia',
+    type: 'Lifestyle',
+    tag: 'Event Venue · Ongoing',
+    images: [imgDome1, imgDome2, imgDome3],
+    story:
+      "Currently under development, this striking dome-style hall is designed to serve as a landmark event and community venue. The distinctive tensile dome structure creates a unique architectural form that stands apart from conventional halls — offering a column-free interior spanning a generous footprint, ideal for community gatherings, exhibitions, and multi-purpose events. KSR Capital's expertise in civil engineering ensures structural integrity alongside aesthetic ambition.",
+    highlights: [
+      'Distinctive dome tensile architecture with column-free interior',
+      'Designed for community gatherings, exhibitions, and events',
+      'Landmark visual identity within its surrounding precinct',
+      'Currently under active development',
+    ],
+    specs: [
+      { label: 'Status', value: 'Ongoing' },
+      { label: 'Structure', value: 'Dome / Tensile' },
+      { label: 'Asset Class', value: 'Lifestyle' },
+      { label: 'Use', value: 'Event & Community' },
+    ],
+    areaContext:
+      "Dome structures are increasingly sought after for their versatility and visual impact. As KSR Capital continues expanding its lifestyle portfolio, this venue adds a distinctive cultural and community dimension — reflecting the company's broader mission to build spaces that connect and inspire.",
+  },
+  {
+    slug: 'pker-park-pickleball',
+    name: 'Pickleball Court',
+    location: 'Pker Park',
+    area: 'Malaysia',
+    type: 'Lifestyle',
+    tag: 'Recreational Facility',
+    images: [imgPker1, imgPker2, imgPker3],
+    story:
+      "KSR Capital's latest recreational facility at Pker Park delivers premium pickleball courts built to exacting standards. Positioned within an established park setting, the courts benefit from existing green infrastructure and natural light — creating an inviting environment for both casual players and competitive enthusiasts. The facility continues KSR Capital's commitment to lifestyle developments that enhance community wellbeing.",
+    highlights: [
+      'Premium courts built to exacting international standards',
+      'Situated within an established park setting',
+      'Natural light and green surroundings for an inviting atmosphere',
+      'Serves casual players and competitive enthusiasts alike',
+    ],
+    specs: [
+      { label: 'Asset Class', value: 'Lifestyle' },
+      { label: 'Standard', value: 'International' },
+      { label: 'Location', value: 'Pker Park' },
+      { label: 'Use', value: 'Recreational' },
+    ],
+    areaContext:
+      "Pickleball has seen explosive growth across Southeast Asia as a fast-paced, accessible racquet sport appealing to all age groups. KSR Capital's investment in dedicated pickleball infrastructure reflects a clear understanding of evolving lifestyle demand — positioning these assets at the forefront of Malaysia's recreational property sector.",
   },
 ]

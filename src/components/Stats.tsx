@@ -12,28 +12,34 @@ interface StatBlock {
 const statBlocks: StatBlock[] = [
   {
     number: '4',
-    unit: '+',
+    unit: '',
     label: 'Properties',
-    desc: 'Across commercial, industrial, and lifestyle asset classes',
+    desc: 'Spanning commercial, industrial, and lifestyle real estate',
   },
   {
     number: '5',
     unit: '+',
     label: 'Years Active',
-    desc: "Building expertise in Malaysian real estate investment",
+    desc: 'Building expertise in Malaysian real estate investment',
+  },
+  {
+    number: 'KL',
+    unit: '',
+    label: 'Based',
+    desc: "Headquartered in Kuala Lumpur — Malaysia's prime economic hub",
   },
   {
     number: '2',
     unit: '',
-    label: 'Key Markets',
-    desc: "Kuala Lumpur and Selangor — Malaysia's prime economic corridors",
+    label: 'Asset Classes',
+    desc: 'Commercial and industrial assets built for long-term performance',
   },
 ]
 
 interface StatItemProps {
   stat: StatBlock
   inView: boolean
-  delay: 1 | 2 | 3
+  delay: number
 }
 
 function StatItem({ stat, inView, delay }: StatItemProps) {
@@ -70,7 +76,7 @@ export function Stats() {
   return (
     <section className="border-t border-b border-border py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-8 md:px-12">
-        <div ref={ref} className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-border">
+        <div ref={ref} className="grid md:grid-cols-4 gap-0 divide-y md:divide-y-0 md:divide-x divide-border">
           {statBlocks.map((stat, i) => (
             <StatItem
               key={stat.label}
