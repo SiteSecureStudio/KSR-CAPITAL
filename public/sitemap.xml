@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url>
+    <loc>https://ksrcapital.my/</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ksrcapital.my/about</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ksrcapital.my/about/director</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ksrcapital.my/approach</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ksrcapital.my/portfolio</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ksrcapital.my/contact</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ksrcapital.my/privacy</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+
+  <!-- Portfolio property pages -->
+  <url>
+    <loc>https://ksrcapital.my/portfolio/kampung-baru-shoplot</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ksrcapital.my/portfolio/rinching-industrial</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ksrcapital.my/portfolio/sungai-besi-industrial</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ksrcapital.my/portfolio/kampung-pandan-pickleball</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ksrcapital.my/portfolio/dome-style-hall</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ksrcapital.my/portfolio/pker-park-pickleball</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+
+</urlset>
