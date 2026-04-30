@@ -1,3 +1,5 @@
+import { SEO } from '../components/SEO'
+import { breadcrumbSchema } from '../data/schema'
 import { Link } from 'react-router-dom'
 import { useInView } from '../hooks/useInView'
 import { Reveal } from '../components/ui/Reveal'
@@ -86,6 +88,12 @@ export function ApproachPage() {
 
   return (
     <>
+      <SEO
+        title="Our Investment Approach — KSR Capital Property Strategy"
+        description="KSR Capital's disciplined approach to property investment: rigorous due diligence, long-term asset holding, and diversified exposure across industrial land, commercial development, strata management, and lifestyle venues in Malaysia."
+        canonical="/approach"
+        schema={breadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Our Approach', url: '/approach' }])}
+      />
       {/* ── Page Header ── */}
       <section className="pt-40 pb-24 md:pt-48 md:pb-28">
         <div className="max-w-6xl mx-auto px-8 md:px-12">

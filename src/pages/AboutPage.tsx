@@ -1,3 +1,5 @@
+import { SEO } from '../components/SEO'
+import { organizationSchema, breadcrumbSchema } from '../data/schema'
 import { Link } from 'react-router-dom'
 import { useInView } from '../hooks/useInView'
 import { Reveal } from '../components/ui/Reveal'
@@ -71,6 +73,12 @@ export function AboutPage() {
 
   return (
     <>
+      <SEO
+        title="About KSR Capital — Malaysian Property Investment Firm Since 2007"
+        description="KSR Capital Sdn Bhd (SSM 764906-W) has built a diversified property portfolio across 5 verticals since 2007 — industrial land, commercial land, strata management, CLQ setup, and lifestyle venues in KL and Selangor."
+        canonical="/about"
+        schema={[organizationSchema, breadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }])]}
+      />
       {/* ── Page Header ── */}
       <section className="pt-40 pb-24 md:pt-48 md:pb-28">
         <div className="max-w-6xl mx-auto px-8 md:px-12">

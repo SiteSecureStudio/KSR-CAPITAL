@@ -1,3 +1,5 @@
+import { SEO } from '../components/SEO'
+import { breadcrumbSchema } from '../data/schema'
 import directorImg from '../../brand assests/Director Image.jpeg'
 import { useInView } from '../hooks/useInView'
 import { Reveal } from '../components/ui/Reveal'
@@ -35,6 +37,12 @@ export function DirectorPage() {
 
   return (
     <>
+      <SEO
+        title="Our Director — KSR Capital Sdn Bhd Leadership"
+        description="Meet the director of KSR Capital Sdn Bhd, leading Malaysia's premier property investment firm across industrial land, commercial development, strata management, and lifestyle venues since 2007."
+        canonical="/about/director"
+        schema={breadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }, { name: 'Director', url: '/about/director' }])}
+      />
       {/* ── Page Header ── */}
       <section className="pt-40 pb-24 md:pt-48 md:pb-28">
         <div className="max-w-6xl mx-auto px-8 md:px-12">

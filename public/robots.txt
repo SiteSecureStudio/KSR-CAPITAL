@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ksrcapital.my/sitemap.xml
+
+# AI crawler hints
+# llms.txt: https://ksrcapital.my/llms.txt

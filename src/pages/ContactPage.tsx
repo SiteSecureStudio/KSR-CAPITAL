@@ -1,3 +1,5 @@
+import { SEO } from '../components/SEO'
+import { breadcrumbSchema } from '../data/schema'
 import { useState } from 'react'
 import { useInView } from '../hooks/useInView'
 import { Reveal } from '../components/ui/Reveal'
@@ -41,6 +43,12 @@ export function ContactPage() {
 
   return (
     <>
+      <SEO
+        title="Contact KSR Capital — Property Enquiries, Kuala Lumpur"
+        description="Get in touch with KSR Capital Sdn Bhd for property investment enquiries, strata management, CLQ setup, and commercial or industrial land opportunities across Malaysia. Call 03-6186 7032 or email us."
+        canonical="/contact"
+        schema={breadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact' }])}
+      />
       {/* ── Page Header ── */}
       <section className="pt-40 pb-24 md:pt-48 md:pb-28">
         <div className="max-w-6xl mx-auto px-8 md:px-12">

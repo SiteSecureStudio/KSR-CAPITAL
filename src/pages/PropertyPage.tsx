@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { SEO } from '../components/SEO'
+import { breadcrumbSchema, propertySchema } from '../data/schema'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { useInView } from '../hooks/useInView'
 import { Reveal } from '../components/ui/Reveal'
@@ -25,6 +27,19 @@ export function PropertyPage() {
 
   return (
     <>
+      <SEO
+        title={`${property.name} — ${property.location} | KSR Capital`}
+        description={property.story.slice(0, 155).trimEnd() + '…'}
+        canonical={`/portfolio/${property.slug}`}
+        schema={[
+          propertySchema(property),
+          breadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Portfolio', url: '/portfolio' },
+            { name: property.name, url: `/portfolio/${property.slug}` },
+          ]),
+        ]}
+      />
       {/* ── Hero Gallery ── */}
       <section className="pt-[76px] relative" style={{ height: '70vh', minHeight: '500px' }}>
         <div className="absolute inset-0 overflow-hidden">

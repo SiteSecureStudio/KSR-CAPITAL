@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { SEO } from '../components/SEO'
+import { breadcrumbSchema } from '../data/schema'
 import { Link } from 'react-router-dom'
 import { useInView } from '../hooks/useInView'
 import { Reveal } from '../components/ui/Reveal'
@@ -123,6 +125,12 @@ export function PortfolioPage() {
 
   return (
     <>
+      <SEO
+        title="Property Portfolio — KSR Capital Sdn Bhd"
+        description="Explore KSR Capital's portfolio of 6 properties across Kuala Lumpur and Selangor — commercial shoplots, industrial units, pickleball courts, and event venues. View our commercial, industrial, and lifestyle assets."
+        canonical="/portfolio"
+        schema={breadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Portfolio', url: '/portfolio' }])}
+      />
       {/* ── Page Header ── */}
       <section className="pt-40 pb-16 md:pt-48 md:pb-20">
         <div className="max-w-6xl mx-auto px-8 md:px-12">

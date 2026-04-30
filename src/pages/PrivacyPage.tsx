@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO'
 import { useInView } from '../hooks/useInView'
 import { Reveal } from '../components/ui/Reveal'
 import { SectionLabel } from '../components/ui/SectionLabel'
@@ -30,6 +31,12 @@ export function PrivacyPage() {
 
   return (
     <>
+      <SEO
+        title="Privacy Policy — KSR Capital Sdn Bhd"
+        description="Read KSR Capital Sdn Bhd's privacy policy outlining how we collect, use, and protect your personal data in accordance with Malaysian data protection requirements."
+        canonical="/privacy"
+        noIndex={false}
+      />
       <section className="pt-40 pb-16 md:pt-48 md:pb-20">
         <div className="max-w-6xl mx-auto px-8 md:px-12">
           <div ref={ref}>
