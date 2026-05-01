@@ -11,7 +11,7 @@ interface SEOProps {
 
 const SITE_NAME = 'KSR Capital Sdn Bhd'
 const SITE_URL = 'https://ksrcapital.my'
-const DEFAULT_OG_IMAGE = `${SITE_URL}/brand%20assests/KSR%20Capital%20logo%20design.png`
+const DEFAULT_OG_IMAGE = `${SITE_URL}/favicon.png`
 
 export function SEO({ title, description, canonical, ogImage, noIndex = false, schema }: SEOProps) {
   const fullTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`
