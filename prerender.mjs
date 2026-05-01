@@ -92,6 +92,15 @@ async function main() {
     process.exit(1)
   }
 
+  // Gracefully skip pre-rendering if Puppeteer/Chrome is unavailable (e.g. CI)
+  try {
+    const { execSync } = await import('child_process')
+    execSync('node -e "require(\'puppeteer\')"', { stdio: 'ignore' })
+  } catch {
+    console.log('Puppeteer unavailable — skipping pre-render (SPA routing handles crawlers)')
+    process.exit(0)
+  }
+
   const server = await startServer()
 
   const chromeArgs = [
