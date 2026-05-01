@@ -1,18 +1,12 @@
 import { SEO } from '../components/SEO'
 import { breadcrumbSchema } from '../data/schema'
 import { useState } from 'react'
+import { useForm, ValidationError } from '@formspree/react'
 import { useInView } from '../hooks/useInView'
 import { Reveal } from '../components/ui/Reveal'
 import { SectionLabel } from '../components/ui/SectionLabel'
 import { Separator } from '@/components/ui/separator'
 import { MapPin, Phone, Mail, Printer, ArrowRight, CheckCircle } from 'lucide-react'
-
-interface LeadFormState {
-  name: string
-  email: string
-  inquiryType: string
-  message: string
-}
 
 const inquiryOptions = [
   { value: '', label: 'Select inquiry type' },
@@ -25,20 +19,14 @@ export function ContactPage() {
   const { ref, inView } = useInView()
   const { ref: channelsRef, inView: channelsInView } = useInView()
 
-  const [form, setForm] = useState<LeadFormState>({ name: '', email: '', inquiryType: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
+  const [state, handleFormspreeSubmit] = useForm('mlgzeqby')
   const [focused, setFocused] = useState<string | null>(null)
+  const [submittedEmail, setSubmittedEmail] = useState('')
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
-    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    const subject = form.inquiryType || 'General Inquiry — KSR Capital'
-    const body = `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
-    window.location.href = `mailto:ksrcapitalsb@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    setSubmitted(true)
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    const emailInput = e.currentTarget.querySelector<HTMLInputElement>('input[name="email"]')
+    if (emailInput) setSubmittedEmail(emailInput.value)
+    handleFormspreeSubmit(e)
   }
 
   return (
@@ -49,6 +37,7 @@ export function ContactPage() {
         canonical="/contact"
         schema={breadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact' }])}
       />
+
       {/* ── Page Header ── */}
       <section className="pt-40 pb-24 md:pt-48 md:pb-28">
         <div className="max-w-6xl mx-auto px-8 md:px-12">
@@ -214,25 +203,22 @@ export function ContactPage() {
 
           <Reveal inView={channelsInView} delay={1}>
             <div className="mt-14 border border-[#242424]" style={{ background: 'rgba(15,13,10,0.6)' }}>
-              {submitted ? (
+
+              {state.succeeded ? (
+                /* ── Success state ── */
                 <div className="p-12 md:p-16 flex flex-col items-start gap-5">
                   <CheckCircle className="w-8 h-8 text-[#C9A227]" />
                   <p className="font-display text-[#E2D9C8] text-xl" style={{ fontWeight: 400 }}>
                     Your message is on its way.
                   </p>
                   <p className="text-[#9A9085] text-sm leading-relaxed max-w-md">
-                    We'll be in touch shortly at <span className="text-[#E2D9C8]">{form.email}</span>. In the meantime, feel free to explore our portfolio.
+                    We'll be in touch shortly{submittedEmail && (
+                      <> at <span className="text-[#E2D9C8]">{submittedEmail}</span></>
+                    )}. In the meantime, feel free to explore our portfolio.
                   </p>
-                  <button
-                    onClick={() => { setSubmitted(false); setForm({ name: '', email: '', inquiryType: '', message: '' }) }}
-                    className="mt-2 inline-flex items-center gap-3 text-[#C9A227] text-xs tracking-widest uppercase group"
-                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-                  >
-                    Send another message
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-                  </button>
                 </div>
               ) : (
+                /* ── Form ── */
                 <form onSubmit={handleSubmit} className="p-8 md:p-12 lg:p-16">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -250,8 +236,6 @@ export function ContactPage() {
                         name="name"
                         type="text"
                         required
-                        value={form.name}
-                        onChange={handleChange}
                         onFocus={() => setFocused('name')}
                         onBlur={() => setFocused(null)}
                         placeholder="Your name"
@@ -261,6 +245,7 @@ export function ContactPage() {
                           transition: 'border-color 0.2s',
                         }}
                       />
+                      <ValidationError field="name" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
 
                     {/* Email */}
@@ -277,8 +262,6 @@ export function ContactPage() {
                         name="email"
                         type="email"
                         required
-                        value={form.email}
-                        onChange={handleChange}
                         onFocus={() => setFocused('email')}
                         onBlur={() => setFocused(null)}
                         placeholder="your@email.com"
@@ -288,9 +271,10 @@ export function ContactPage() {
                           transition: 'border-color 0.2s',
                         }}
                       />
+                      <ValidationError field="email" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
 
-                    {/* Inquiry Type — full width */}
+                    {/* Inquiry Type — full width, sent as _subject so email subject matches */}
                     <div className="flex flex-col gap-2 md:col-span-2">
                       <label
                         htmlFor="inquiryType"
@@ -301,17 +285,19 @@ export function ContactPage() {
                       </label>
                       <select
                         id="inquiryType"
-                        name="inquiryType"
+                        name="_subject"
                         required
-                        value={form.inquiryType}
-                        onChange={handleChange}
                         onFocus={() => setFocused('inquiryType')}
                         onBlur={() => setFocused(null)}
+                        defaultValue=""
                         className="bg-[#0f0d0a] text-sm outline-none py-3 px-0 appearance-none cursor-pointer"
                         style={{
-                          color: form.inquiryType ? '#E2D9C8' : '#3a3530',
+                          color: '#3a3530',
                           borderBottom: `1px solid ${focused === 'inquiryType' ? '#C9A227' : '#2e2b26'}`,
-                          transition: 'border-color 0.2s',
+                          transition: 'border-color 0.2s, color 0.2s',
+                        }}
+                        onChange={e => {
+                          e.currentTarget.style.color = e.currentTarget.value ? '#E2D9C8' : '#3a3530'
                         }}
                       >
                         {inquiryOptions.map(opt => (
@@ -340,8 +326,6 @@ export function ContactPage() {
                         name="message"
                         required
                         rows={4}
-                        value={form.message}
-                        onChange={handleChange}
                         onFocus={() => setFocused('message')}
                         onBlur={() => setFocused(null)}
                         placeholder="Tell us what you're looking for…"
@@ -351,8 +335,12 @@ export function ContactPage() {
                           transition: 'border-color 0.2s',
                         }}
                       />
+                      <ValidationError field="message" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
                   </div>
+
+                  {/* Form-level errors (network, spam, etc.) */}
+                  <ValidationError errors={state.errors} className="mt-4 text-red-400 text-xs" />
 
                   {/* Submit */}
                   <div className="mt-12 flex items-center justify-between flex-wrap gap-6">
@@ -361,13 +349,16 @@ export function ContactPage() {
                     </p>
                     <button
                       type="submit"
+                      disabled={state.submitting}
                       className="group inline-flex items-center gap-4 border border-[#C9A227]/40 text-[#C9A227] text-xs tracking-widest uppercase px-8 py-4"
                       style={{
                         background: 'transparent',
-                        cursor: 'pointer',
-                        transition: 'background 0.25s, border-color 0.25s, color 0.25s',
+                        cursor: state.submitting ? 'wait' : 'pointer',
+                        opacity: state.submitting ? 0.6 : 1,
+                        transition: 'background 0.25s, border-color 0.25s, color 0.25s, opacity 0.2s',
                       }}
                       onMouseEnter={e => {
+                        if (state.submitting) return
                         const el = e.currentTarget
                         el.style.background = 'rgba(201,162,39,0.08)'
                         el.style.borderColor = '#C9A227'
@@ -378,12 +369,13 @@ export function ContactPage() {
                         el.style.borderColor = 'rgba(201,162,39,0.4)'
                       }}
                     >
-                      Send Message
+                      {state.submitting ? 'Sending…' : 'Send Message'}
                       <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                     </button>
                   </div>
                 </form>
               )}
+
             </div>
           </Reveal>
         </div>
