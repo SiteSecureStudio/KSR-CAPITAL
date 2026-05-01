@@ -94,17 +94,23 @@ async function main() {
 
   const server = await startServer()
 
-  let browser
-  try {
-    browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] })
-  } catch {
-    // Fallback to the puppeteer cache used by screenshot.mjs on this machine
-    browser = await puppeteer.launch({
-      headless: true,
-      executablePath: 'C:/Users/nateh/.cache/puppeteer/chrome/win64-134.0.6998.35/chrome-win64/chrome.exe',
-      args: ['--no-sandbox'],
-    })
-  }
+  const chromeArgs = [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-gpu',
+    '--no-first-run',
+    '--no-zygote',
+  ]
+
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: chromeArgs,
+    // PUPPETEER_EXECUTABLE_PATH env var lets Vercel/CI override the Chrome binary
+    ...(process.env.PUPPETEER_EXECUTABLE_PATH
+      ? { executablePath: process.env.PUPPETEER_EXECUTABLE_PATH }
+      : {}),
+  })
 
   console.log(`\nPre-rendering ${ROUTES.length} routes...\n`)
 
